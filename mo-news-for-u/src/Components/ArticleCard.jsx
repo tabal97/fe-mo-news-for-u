@@ -6,6 +6,7 @@ class ArticleCard extends Component {
     }
 
     render() {
+        console.log()
         return (
             <div>
 
