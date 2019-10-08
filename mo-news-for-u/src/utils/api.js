@@ -11,3 +11,8 @@ export const getArticles = async () => {
     const { data } = await request.get("/articles");
     return data
 }
+
+export const getArticle = async (id) => {
+    const { data } = await request.get(`/articles/${id}`);
+    return data;
+}

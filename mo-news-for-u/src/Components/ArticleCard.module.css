@@ -1,0 +1,25 @@
+.card {
+display: grid;
+grid-template-rows: 4rem 3rem;
+grid-template-columns: 1fr 1fr;
+grid-template-areas: "title author" "topic userTally";
+border: 2px solid;
+margin: 10px 50px 20px 50px;
+padding: 1rem;
+}
+
+.title {
+grid-area: title;
+}
+
+.author {
+    grid-area: author;
+}
+
+.topic {
+    grid-area: topic;
+}
+
+.userTally {
+    grid-area: userTally;
+}

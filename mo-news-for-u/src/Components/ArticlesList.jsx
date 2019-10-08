@@ -8,7 +8,6 @@ class ArticlesList extends Component {
     }
     render() {
         const { articles } = this.state;
-        console.log(articles)
         return (
             <div>
                 {articles.map(article => {

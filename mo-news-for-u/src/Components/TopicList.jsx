@@ -8,10 +8,10 @@ class TopicList extends Component {
     render() {
         const { topics } = this.state;
         return (
-            <div><Link to="/">Home</Link> {topics.map(({ slug }) => {
+            <nav><Link to="/">Home</Link> {topics.map(({ slug }) => {
                 return (<React.Fragment key={slug}> || <Link to={`/topics/${slug}`} >{`${slug}`}</Link></React.Fragment>);
             })}
-            </div>
+            </nav>
         );
     }
     componentDidMount() {
