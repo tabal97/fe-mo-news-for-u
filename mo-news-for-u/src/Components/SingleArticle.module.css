@@ -1,0 +1,50 @@
+.article{
+    display: flex;
+    flex-direction: column
+}
+
+.articleSection {
+    display: flex;
+    flex-direction: column;
+    border-bottom: double
+}
+
+.body {
+    grid-area: body;
+    border: 3px groove;
+    margin: 10px 50px 20px 50px;
+    padding: 1rem;
+}
+
+.container {
+    display:grid;
+    grid-area: articleInfo;
+    grid-template-rows: 7rem 4rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title author" "topic created_at";
+    margin-top: 3rem;
+    border-top: double;
+}
+
+.title {
+    grid-area: title;
+    border: 2px solid;
+    width: auto;
+    align-self: center;
+    margin: 0px 3rem 0px 3rem;
+    padding: auto
+}
+
+.author {
+    grid-area: author;
+}
+
+.topic {
+    grid-area: topic;
+    border: 1px solid;
+   margin: 1rem 10rem 1rem 10rem;
+}
+
+.created_at {
+    grid-area: created_at;
+}

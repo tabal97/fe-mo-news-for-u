@@ -16,3 +16,8 @@ export const getArticle = async (id) => {
     const { data } = await request.get(`/articles/${id}`);
     return data;
 }
+
+export const articleVoter = async (id, inc_votes) => {
+    const { data } = await request.patch(`/articles/${id}`, { inc_votes });
+    return data;
+}

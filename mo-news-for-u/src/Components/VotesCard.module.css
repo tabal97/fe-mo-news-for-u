@@ -1,0 +1,26 @@
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas: "upVote downVote counter"
+}
+
+.upVote {
+    grid-area: upVote;
+}
+
+.downVote {
+    grid-area: downVote;
+}
+
+.counter {
+    grid-area: counter;
+}
+
+.activeUpVote {
+    background-color: rgb(111, 243, 99)
+}
+
+
+.activeDownVote {
+    background-color: rgb(247, 159, 58)
+}
