@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from "./VotesCard.module.css"
+import styles from "../Styles/VotesCard.module.css"
 
 class VotesCard extends Component {
     state = {
@@ -10,8 +10,8 @@ class VotesCard extends Component {
         const { votedUp, votedDown } = this.state;
         return (
             <section className={styles.card}>
-                <button className={votedUp ? styles.activeUpVote : styles.upVote} onClick={this.upVote}>UpVote</button>
-                <button className={votedDown ? styles.activeDownVote : styles.downVote} onClick={this.downVote}>DownVote</button>
+                <button className={votedUp ? styles.activeUpVote : styles.upVote} onClick={this.upVote} disabled={votedDown}>UpVote</button>
+                <button className={votedDown ? styles.activeDownVote : styles.downVote} onClick={this.downVote} disabled={votedUp}>DownVote</button>
                 <p className={styles.counter}>Votes: {votes}</p>
             </section>
         );

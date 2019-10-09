@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from "./ArticleCard.module.css";
+import styles from "../Styles/ArticleCard.module.css";
 import { Link } from "@reach/router"
 
 class ArticleCard extends Component {

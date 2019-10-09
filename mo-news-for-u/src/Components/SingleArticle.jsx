@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from "../utils/api"
-import styles from "./SingleArticle.module.css"
+import styles from "../Styles/SingleArticle.module.css"
 import VotesCard from './VotesCard';
 class SingleArticle extends Component {
     state = {
