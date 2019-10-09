@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from "../utils/api"
 import styles from "../Styles/SingleArticle.module.css"
 import VotesCard from './VotesCard';
+import CommentsSection from './CommentsSection';
 class SingleArticle extends Component {
     state = {
         article: {}, isLoading: true
@@ -21,6 +22,7 @@ class SingleArticle extends Component {
                     <div className={styles.body}>{body}</div>
                 </section>
                 <VotesCard votes={votes} votesHandler={this.votesHandler} />
+                <CommentsSection article_id={article_id} />
             </div>
         );
     }

@@ -21,3 +21,13 @@ export const articleVoter = async (id, inc_votes) => {
     const { data } = await request.patch(`/articles/${id}`, { inc_votes });
     return data;
 }
+
+export const getComments = async (id) => {
+    const { data } = await request.get(`/articles/${id}/comments`);
+    return data;
+}
+
+export const commentVoter = async (id, inc_votes) => {
+    const { data } = await request.patch(`/comments/${id}`, { inc_votes });
+    return data;
+}
