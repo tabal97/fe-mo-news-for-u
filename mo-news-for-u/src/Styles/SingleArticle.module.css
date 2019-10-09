@@ -6,7 +6,6 @@
 .articleSection {
     display: flex;
     flex-direction: column;
-    border-bottom: double
 }
 
 .body {
@@ -14,6 +13,10 @@
     border: 3px groove;
     margin: 10px 50px 20px 50px;
     padding: 1rem;
+    background-color: rgb(228, 239, 253);
+    text-align: justify;
+    font-size: 110%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -32,7 +35,9 @@
     width: auto;
     align-self: center;
     margin: 0px 3rem 0px 3rem;
-    padding: auto
+    padding: auto;
+    background-color: rgb(208, 232, 253);
+    text-shadow: 1px 1px 2px rgb(25, 69, 119);
 }
 
 .author {
@@ -43,6 +48,7 @@
     grid-area: topic;
     border: 1px solid;
    margin: 1rem 10rem 1rem 10rem;
+   background-color: rgb(255, 249, 249)
 }
 
 .created_at {

@@ -1,26 +1,41 @@
 .card{
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
-    grid-template-areas: "upVote downVote counter"
+    grid-template-areas: "upVote downVote counter";
+    padding-left: 1rem;
 }
 
 .upVote {
     grid-area: upVote;
+    font-size: 105%;
+    margin-right: 1rem;
+    max-width: 7rem;
+    margin-left: 5rem;
 }
 
 .downVote {
     grid-area: downVote;
+    font-size: 105%;
+    max-width: 7rem;
 }
 
 .counter {
     grid-area: counter;
+    font-weight: bold;
 }
 
 .activeUpVote {
-    background-color: rgb(111, 243, 99)
+    background-color: rgb(111, 243, 99);
+    font-weight: bold;
+    font-size: 105%;
+    margin-left: 5rem;
+    max-width: 7rem;
 }
 
 
 .activeDownVote {
-    background-color: rgb(247, 159, 58)
+    background-color: rgb(247, 159, 58);
+    font-weight: bold;
+    font-size: 105%;
+    max-width: 7rem;
 }

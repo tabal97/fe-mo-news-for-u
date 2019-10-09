@@ -1,0 +1,16 @@
+.commentsSection{
+display: flex;
+flex-direction: column;
+border-top: 1px dotted;
+margin-top: 1rem
+}
+
+.title{
+    text-decoration: underline;
+    background-color: antiquewhite;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    padding: 1rem;
+    border: double
+}

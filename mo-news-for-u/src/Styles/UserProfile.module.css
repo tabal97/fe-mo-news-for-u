@@ -1,0 +1,18 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "info img";
+    margin: 3rem ;
+    border: double;
+    background-color: bisque
+}
+
+.info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column
+}
+.img{
+    grid-area: img;
+    border: 3px solid grey
+}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styles from "../Styles/CommentCard.module.css";
 import * as api from "../utils/api";
-import VotesCard from "./VotesCard"
+import VotesCard from "./VotesCard";
+import { Link } from "@reach/router"
 
 class CommentCard extends Component {
     state = {
@@ -9,12 +10,15 @@ class CommentCard extends Component {
     }
     render() {
         const { votes, created_at, author, body } = this.state.comment;
-        console.log(this.state.comment)
         return (
             <div className={styles.card}>
-                <h4 className={styles.info}>{author} @{created_at && created_at.slice(0, 10)}</h4>
-                <p >{body}</p>
+                <div className={styles.info}><h4 ><Link to={`/users/${author}`}>{author}</Link>@{created_at && created_at.slice(0, 10)} </h4>
+                    <button id={styles.delete}>Delete</button></div>
+
+
+                <p className={styles.comment}>{body}</p>
                 <VotesCard votes={votes} className={styles.votes} votesHandler={this.votesHandler} />
+
             </div>
         );
     }

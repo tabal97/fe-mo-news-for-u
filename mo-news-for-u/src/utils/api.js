@@ -31,3 +31,8 @@ export const commentVoter = async (id, inc_votes) => {
     const { data } = await request.patch(`/comments/${id}`, { inc_votes });
     return data;
 }
+
+export const getUser = async (user) => {
+    const { data } = await request.get(`/users/${user}`);
+    return data;
+}

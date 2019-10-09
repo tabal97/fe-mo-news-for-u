@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as api from "../utils/api";
 import { Link } from "@reach/router"
 
-class TopicList extends Component {
+class Nav extends Component {
     state = { topics: [] }
 
     render() {
@@ -10,7 +10,7 @@ class TopicList extends Component {
         return (
             <nav><Link to="/">Home</Link> {topics.map(({ slug }) => {
                 return (<React.Fragment key={slug}> || <Link to={`/topics/${slug}`} >{`${slug}`}</Link></React.Fragment>);
-            })}
+            })} || <Link to="/login">Change User</Link>
             </nav>
         );
     }
@@ -23,4 +23,4 @@ class TopicList extends Component {
     }
 }
 
-export default TopicList;
+export default Nav;

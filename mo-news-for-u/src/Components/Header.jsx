@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import styles from "../Styles/Header.module.css"
+import React from 'react';
 
-class Header extends Component {
-    render() {
-        return (
-            <h1>Mo News For U</h1>
-        );
-    }
-}
+const Header = ({ currentUser }) => {
+    return (<div className={styles.header}>
+        <h1 className={styles.title}>Mo News For U</h1>
+        <h3 className={styles.login}>Logged in as {currentUser ? currentUser : "Guest"}</h3>
+    </div>
+
+    );
+};
 
 export default Header;
