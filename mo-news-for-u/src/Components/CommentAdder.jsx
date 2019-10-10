@@ -9,7 +9,7 @@ class CommentAdder extends Component {
         const { body, currentUser } = this.state;
         return (
             <form className={styles.form} onSubmit={this.handleSubmit}><label className={styles.box} >Add Comment:
-                <input type="text" value={body} onChange={this.handleChange} placeholder="Write here..."></input>
+                <textarea rows="4" cols="50" value={body} onChange={this.handleChange} placeholder="Write here..."></textarea>
             </label><button className={styles.button} disabled={!currentUser} >{currentUser ? "Add Comment" : "Login Required"}</button>
             </form>
         );

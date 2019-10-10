@@ -6,7 +6,7 @@ import { Link } from "@reach/router"
 
 class CommentCard extends Component {
     state = {
-        comment: {}, isLoading: true, deleted: false
+        comment: {}, isLoading: true, deleted: false, error: { state: "", msg: "" }
     }
     render() {
         const { votes, created_at, author, body } = this.state.comment;
@@ -27,12 +27,12 @@ class CommentCard extends Component {
     }
     votesHandler = (vote) => {
         const { comment_id } = this.state.comment
-        return api.commentVoter(comment_id, vote).then(({ comment }) => this.setState({ comment, isLoading: false }))
+        return api.commentVoter(comment_id, vote).then(({ comment }) => this.setState({ comment, isLoading: false })).catch(err => this.setState({ error: { status: err.status, msg: err.msg } }))
     }
     removeComment = () => {
         const { comment_id } = this.state.comment;
         this.setState({ deleted: true })
-        api.deleteComment(comment_id).catch(console.log)
+        api.deleteComment(comment_id).catch(err => this.setState({ error: { status: err.status, msg: err.msg } }))
     }
 }
 
