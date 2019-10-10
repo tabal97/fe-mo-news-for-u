@@ -9,7 +9,7 @@ margin: 10px 50px 20px 50px;
 padding: 1rem;
 background-color: rgb(255, 254, 254);
 }
-.card:hover{
+:hover{
     background-color: lightgrey;
     }
 

@@ -9,8 +9,16 @@ margin: 10px 50px 20px 50px;
 padding: 1rem;
 background-color: rgb(255, 254, 254);
 }
-.card:hover{
-    background-color: lightgrey;
+.card :hover{
+    display: grid;
+    grid-template-rows: 4rem 3rem;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "title author" "topic userTally";
+    border: 2px solid;
+    border-radius: 1rem;
+    margin: 10px 50px 20px 50px;
+    padding: 1rem;
+    background-color: grey;
     }
 
 .title {
