@@ -1,0 +1,13 @@
+.form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    width: 30rem;
+    height: 5rem;
+}
+
+.button {
+
+}

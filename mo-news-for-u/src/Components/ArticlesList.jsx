@@ -11,7 +11,7 @@ class ArticlesList extends Component {
         return (
             <div>
                 {articles.map(article => {
-                    return <ArticleCard {...article} />
+                    return <ArticleCard key={article.article_id} {...article} />
                 })}
             </div>
         );

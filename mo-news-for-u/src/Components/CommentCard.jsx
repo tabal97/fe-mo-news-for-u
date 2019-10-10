@@ -14,8 +14,6 @@ class CommentCard extends Component {
             <div className={styles.card}>
                 <div className={styles.info}><h4 ><Link to={`/users/${author}`}>{author}</Link>@{created_at && created_at.slice(0, 10)} </h4>
                     <button id={styles.delete}>Delete</button></div>
-
-
                 <p className={styles.comment}>{body}</p>
                 <VotesCard votes={votes} className={styles.votes} votesHandler={this.votesHandler} />
 

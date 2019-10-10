@@ -36,3 +36,8 @@ export const getUser = async (user) => {
     const { data } = await request.get(`/users/${user}`);
     return data;
 }
+
+export const postComment = async (id, body) => {
+    const { data } = await request.post(`/articles/${id}/comments`, body);
+    return data;
+}
