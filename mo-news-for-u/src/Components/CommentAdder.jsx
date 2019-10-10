@@ -7,7 +7,7 @@ class CommentAdder extends Component {
     }
     render() {
         const { body } = this.state;
-        const { currentUser } = this.props;
+        const currentUser = localStorage.getItem("currentUser")
         return (
             <form className={styles.form} onSubmit={this.handleSubmit}><label className={styles.box} >Add Comment:
                 <input type="text" value={body} onChange={this.handleChange} placeholder="Write here..."></input>

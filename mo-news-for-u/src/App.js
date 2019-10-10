@@ -25,7 +25,8 @@ class App extends Component {
           <LoginSection path="/login" changeUser={this.changeUser} users={users} />
           <ArticlesList path="/" />
           <ArticlesList path="/articles" />
-          <SingleArticle path="/articles/:article_id" currentUser={currentUser} />
+          <ArticlesList path="/topics/:topic" />
+          <SingleArticle path="/articles/:article_id" />
         </Router>
       </div>
     );

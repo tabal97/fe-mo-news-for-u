@@ -7,8 +7,8 @@ export const getTopics = async () => {
     return data;
 }
 
-export const getArticles = async () => {
-    const { data } = await request.get("/articles");
+export const getArticles = async (topic) => {
+    const { data } = await request.get("/articles", { params: { topic } });
     return data
 }
 
@@ -39,5 +39,10 @@ export const getUser = async (user) => {
 
 export const postComment = async (id, body) => {
     const { data } = await request.post(`/articles/${id}/comments`, body);
+    return data;
+}
+
+export const deleteComment = async (id) => {
+    const { data } = await request.delete(`/api/comments/${id}`);
     return data;
 }

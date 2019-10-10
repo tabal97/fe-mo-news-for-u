@@ -20,9 +20,16 @@ class ArticlesList extends Component {
     componentDidMount() {
         this.fetchArticles();
     }
+    componentDidUpdate(prevProp) {
+        const { topic } = this.props
+        const topicChanged = prevProp.topic !== topic
+        if (topicChanged) {
+            this.fetchArticles(topic)
+        }
+    }
 
-    fetchArticles = () => {
-        api.getArticles().then(articles => this.setState(articles))
+    fetchArticles = (topic) => {
+        api.getArticles(topic).then(articles => this.setState(articles))
     }
 }
 

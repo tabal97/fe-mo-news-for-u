@@ -6,26 +6,33 @@ import { Link } from "@reach/router"
 
 class CommentCard extends Component {
     state = {
-        comment: {}, isLoading: true
+        comment: {}, isLoading: true, deleted: false
     }
     render() {
         const { votes, created_at, author, body } = this.state.comment;
+        const { deleted } = this.state;
+        const currentUser = localStorage.getItem("currentUser")
         return (
-            <div className={styles.card}>
+            <div className={deleted ? styles.cardDeleted : styles.card}>
                 <div className={styles.info}><h4 ><Link to={`/users/${author}`}>{author}</Link>@{created_at && created_at.slice(0, 10)} </h4>
-                    <button id={styles.delete}>Delete</button></div>
+                    {currentUser === author && <button className={styles.delete} onClick={this.removeComment} disabled={deleted}>Delete</button>}</div>
                 <p className={styles.comment}>{body}</p>
                 <VotesCard votes={votes} className={styles.votes} votesHandler={this.votesHandler} />
-
             </div>
         );
     }
     componentDidMount() {
-        this.setState({ comment: this.props, isLoading: false })
+        const { votes, created_at, author, body, comment_id } = this.props
+        this.setState({ comment: { votes, created_at, author, body, comment_id }, isLoading: false })
     }
     votesHandler = (vote) => {
         const { comment_id } = this.state.comment
         return api.commentVoter(comment_id, vote).then(({ comment }) => this.setState({ comment, isLoading: false }))
+    }
+    removeComment = () => {
+        const { comment_id } = this.state.comment;
+        this.setState({ deleted: true })
+        api.deleteComment(comment_id)
     }
 }
 

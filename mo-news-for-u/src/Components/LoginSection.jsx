@@ -26,10 +26,12 @@ class LoginSection extends Component {
         this.setState({ currentUser: value })
     }
     handleSubmit = (e) => {
-        const { changeUser } = this.props;
         const { currentUser } = this.state;
+        const { changeUser } = this.props;
         e.preventDefault();
-        changeUser(currentUser);
+        localStorage.clear();
+        localStorage.setItem("currentUser", currentUser)
+        changeUser(currentUser)
         navigate("/")
     }
 }

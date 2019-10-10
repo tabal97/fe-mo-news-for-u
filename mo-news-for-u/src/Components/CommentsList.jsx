@@ -8,13 +8,11 @@ class CommentsList extends Component {
     }
     render() {
         const { comments } = this.state;
-        const { currentUser } = this.props
-        console.log(comments)
         return (
             <div>
-                <CommentAdder currentUser={currentUser} addComment={this.addComment} />
+                <CommentAdder addComment={this.addComment} />
                 {comments.map(comment => {
-                    return <CommentCard key={comment.comment_id} {...comment} />
+                    return <CommentCard key={comment.comment_id}  {...comment} />
                 })}
             </div>
         );
@@ -35,7 +33,8 @@ class CommentsList extends Component {
         api.getComments(article_id).then(comments => this.setState(comments))
     }
     addComment = (body) => {
-        const { article_id, currentUser } = this.props;
+        const { article_id } = this.props;
+        const currentUser = localStorage.getItem("currentUser")
         const input = { username: currentUser, body };
         api.postComment(article_id, input).then(comment => {
             this.setState(currState => {
