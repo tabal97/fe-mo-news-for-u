@@ -11,13 +11,14 @@ import UserProfile from './Components/UserProfile';
 
 class App extends Component {
   state = {
-    users: ["", "jessjelly", "weegembump", "happyamy2016", "grumpy19", "tickle122"]
+    users: ["", "jessjelly", "weegembump", "happyamy2016", "grumpy19", "tickle122"],
+    currentUser: ""
   }
   render() {
-    const { users } = this.state;
+    const { users, currentUser } = this.state;
     return (
       <div className="app">
-        <Header />
+        <Header currentUser={currentUser} />
         <Nav />
         <Router>
           <UserProfile path="/users/:username" />

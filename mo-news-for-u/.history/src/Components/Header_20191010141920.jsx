@@ -6,9 +6,8 @@ class Header extends Component {
         currentUser: ""
     }
     render() {
-        const { currentUser } = this.state;
         return (
-            <div className={styles.header}>
+            <div>
                 <h1 className={styles.title}>Mo News For U</h1>
                 <h3 className={styles.login}>Logged in as {currentUser ? currentUser : "Guest"}</h3>
             </div>
@@ -16,15 +15,18 @@ class Header extends Component {
     }
     componentDidMount() {
         const localUser = localStorage.getItem("currentUser")
-        this.setState({ currentUser: localUser })
-    }
-    componentDidUpdate(prevProp, prevState) {
-        const localUser = localStorage.getItem("currentUser")
-        const userChanged = prevState.currentUser !== localUser;
-        if (userChanged) {
-            this.setState({ currentUser: localUser })
-        }
+        console.log(localUser)
     }
 }
 
 export default Header;
+
+// const Header = ({ currentUser }) => {
+//     return (<div className={styles.header}>
+
+//     </div>
+
+//     );
+// };
+
+// export default Header;

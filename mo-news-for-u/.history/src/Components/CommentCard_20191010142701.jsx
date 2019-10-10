@@ -14,7 +14,7 @@ class CommentCard extends Component {
         return (
             <div className={deleted ? styles.cardDeleted : styles.card}>
                 <div className={styles.info}><h4 ><Link to={`/users/${author}`}>{author}</Link>@{created_at && created_at.slice(0, 10)} </h4>
-                    {currentUser === author && <button className={styles.delete} onClick={this.removeComment} disabled={deleted}>{deleted ? "Comment Deleted" : "Delete"}</button>}</div>
+                    {currentUser === author && <button className={styles.delete} onClick={this.removeComment} disabled={deleted}>Delete</button>}</div>
                 <p className={styles.comment}>{body}</p>
                 <VotesCard votes={votes} className={styles.votes} votesHandler={this.votesHandler} />
             </div>

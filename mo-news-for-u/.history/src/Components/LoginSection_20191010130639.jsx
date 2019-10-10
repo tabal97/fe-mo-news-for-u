@@ -11,7 +11,7 @@ class LoginSection extends Component {
             <section>
                 <h2>Log in:</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Choose User:  <select onChange={this.handleChange}>
+                    <label>Choose User:<select onChange={this.handleChange}>
                         {users.map(user => {
                             return <option key={user} value={user}>{user}</option>
                         })}

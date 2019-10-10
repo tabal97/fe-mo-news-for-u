@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    justify-content: space-between;	
+}
+
+
+.title{
+    margin-top:0px;
+    padding-top: 1rem;
+    text-align: justify;
+    padding-left: 2rem;
+}
+
+.login{
+}

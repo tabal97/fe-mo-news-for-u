@@ -8,7 +8,7 @@ class Header extends Component {
     render() {
         const { currentUser } = this.state;
         return (
-            <div className={styles.header}>
+            <div>
                 <h1 className={styles.title}>Mo News For U</h1>
                 <h3 className={styles.login}>Logged in as {currentUser ? currentUser : "Guest"}</h3>
             </div>

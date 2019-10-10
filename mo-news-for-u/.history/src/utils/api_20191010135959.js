@@ -43,6 +43,6 @@ export const postComment = async (id, body) => {
 }
 
 export const deleteComment = async (id) => {
-    const { data } = await request.delete(`/comments/${id}`);
+    const { data } = await request.delete(`/api/comments/${id}`);
     return data;
 }

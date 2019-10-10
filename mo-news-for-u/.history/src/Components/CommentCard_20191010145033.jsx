@@ -29,6 +29,8 @@ class CommentCard extends Component {
         const localUser = localStorage.getItem("currentUser")
         const userChanged = prevState.currentUser !== localUser;
         if (userChanged) {
+            console.log("updating...")
+
             this.setState({ currentUser: localUser })
         }
     }

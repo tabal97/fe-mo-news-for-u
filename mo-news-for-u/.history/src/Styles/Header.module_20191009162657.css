@@ -1,0 +1,18 @@
+.header{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "title login"
+}
+
+
+.title{
+    margin-top:0px;
+    padding-top: 1rem;
+    text-align: justify;
+    padding-left: 2rem;
+    grid-area: title;
+}
+
+.login{
+    grid-area: login
+}

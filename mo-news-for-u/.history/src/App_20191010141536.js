@@ -17,7 +17,7 @@ class App extends Component {
     const { users } = this.state;
     return (
       <div className="app">
-        <Header />
+        <Header currentUser={currentUser} />
         <Nav />
         <Router>
           <UserProfile path="/users/:username" />
