@@ -7,8 +7,8 @@ export const getTopics = async () => {
     return data;
 }
 
-export const getArticles = async (topic, sortBy) => {
-    const { data } = await request.get("/articles", { params: { topic, sortBy } });
+export const getArticles = async (topic, sortBy, orderBy) => {
+    const { data } = await request.get("/articles", { params: { topic, sortBy, orderBy } });
     return data
 }
 
