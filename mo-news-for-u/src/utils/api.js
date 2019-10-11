@@ -22,8 +22,8 @@ export const articleVoter = async (id, inc_votes) => {
     return data;
 }
 
-export const getComments = async (id) => {
-    const { data } = await request.get(`/articles/${id}/comments`);
+export const getComments = async (id, p) => {
+    const { data } = await request.get(`/articles/${id}/comments`, { params: { p } });
     return data;
 }
 

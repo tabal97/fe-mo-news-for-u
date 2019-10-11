@@ -7,11 +7,10 @@ import throttle from "lodash.throttle"
 
 class ArticlesList extends Component {
     state = {
-        articles: [], sortBy: null, orderBy: "desc", total_articles: 0, p: 1, isLoading: true, maxPageReached: false
+        articles: [], sortBy: null, orderBy: "desc", total_articles: 0, p: 1, isLoading: true
     }
     render() {
         const { articles } = this.state;
-        // console.log(this.state)
         return (
             <div>
                 <SortByFilter updateSortBy={this.updateSortBy} />
@@ -29,14 +28,14 @@ class ArticlesList extends Component {
         this.fetchArticles(topic);
         this.addScrollEventListener()
     }
-    componentDidUpdate(prevProp, prevSate) {
+    componentDidUpdate(prevProp, prevState) {
         const { topic } = this.props
         const { sortBy, orderBy, p } = this.state;
         console.log(p)
         const topicChanged = prevProp.topic !== topic;
-        const sortByChanged = prevSate.sortBy !== sortBy;
-        const orderByChanged = prevSate.orderBy !== orderBy;
-        const pageChanged = prevSate.p !== p;
+        const sortByChanged = prevState.sortBy !== sortBy;
+        const orderByChanged = prevState.orderBy !== orderBy;
+        const pageChanged = prevState.p !== p;
         if (topicChanged) {
             this.setState({ p: 1 });
             this.fetchArticles(topic, sortBy, orderBy, p)

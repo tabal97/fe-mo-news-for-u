@@ -8,7 +8,7 @@ class SingleArticle extends Component {
         article: {}, isLoading: true
     }
     render() {
-        const { article_id, author, body, created_at, title, topic, votes } = this.state.article;
+        const { article_id, author, body, created_at, title, topic, votes, comment_count } = this.state.article;
         if (this.state.isLoading) { return <h2>Loading Article...</h2> }
         else return (
             <div className={styles.article}>
@@ -22,7 +22,7 @@ class SingleArticle extends Component {
                     <div className={styles.body}>{body}</div>
                 </section>
                 <VotesCard votes={votes} votesHandler={this.votesHandler} />
-                <CommentsSection article_id={article_id} />
+                <CommentsSection article_id={article_id} comment_count={comment_count} />
             </div>
         );
     }
