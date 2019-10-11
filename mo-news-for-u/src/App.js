@@ -11,7 +11,7 @@ import UserProfile from './Components/UserProfile';
 
 class App extends Component {
   state = {
-    users: ["", "jessjelly", "weegembump", "happyamy2016", "grumpy19", "tickle122"]
+    users: ["Guest", "jessjelly", "weegembump", "happyamy2016", "grumpy19", "tickle122"]
   }
   render() {
     const { users } = this.state;
