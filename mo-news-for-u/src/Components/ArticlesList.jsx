@@ -3,23 +3,25 @@ import * as api from "../utils/api";
 import ArticleCard from "../Components/ArticleCard"
 import SortByFilter from './SortByFilter';
 import OrderByFilter from './OrderByFilter';
-import throttle from "lodash.throttle"
+import throttle from "lodash.throttle";
+import Errors from "./Errors"
 
 class ArticlesList extends Component {
     state = {
-        articles: [], sortBy: null, orderBy: "desc", total_articles: 0, p: 1, isLoading: true
+        articles: [], sortBy: null, orderBy: "desc", total_articles: 0, p: 1, isLoading: true, errStatus: null, errMsg: null
     }
     render() {
-        const { articles } = this.state;
+        const { articles, errStatus, errMsg } = this.state;
         return (
-            <div>
-                <SortByFilter updateSortBy={this.updateSortBy} />
-                <OrderByFilter updateOrderBy={this.updateOrderBy} />
+            (errStatus) ? <Errors msg={errMsg} status={errStatus} /> :
+                (<div>
+                    <SortByFilter updateSortBy={this.updateSortBy} />
+                    <OrderByFilter updateOrderBy={this.updateOrderBy} />
 
-                {articles.map(article => {
-                    return <ArticleCard key={article.article_id} {...article} />
-                })}
-            </div>
+                    {articles.map(article => {
+                        return <ArticleCard key={article.article_id} {...article} />
+                    })}
+                </div>)
         );
     }
 
@@ -31,7 +33,6 @@ class ArticlesList extends Component {
     componentDidUpdate(prevProp, prevState) {
         const { topic } = this.props
         const { sortBy, orderBy, p } = this.state;
-        console.log(p)
         const topicChanged = prevProp.topic !== topic;
         const sortByChanged = prevState.sortBy !== sortBy;
         const orderByChanged = prevState.orderBy !== orderBy;
@@ -50,15 +51,21 @@ class ArticlesList extends Component {
 
         if (p === 1) {
             api.getArticles(topic, sortBy, orderBy, p).then(({ articles, total_articles }) => {
-                this.setState({ articles, total_articles })
+                this.setState({ articles, total_articles, errMsg: null, errStatus: null })
+            }).catch(({ response }) => {
+                const { status, data: { msg } } = response;
+                this.setState({ errStatus: status, errMsg: msg })
             })
         } else {
             api.getArticles(topic, sortBy, orderBy, p).then(({ articles, total_articles }) => {
 
                 this.setState(currState => {
                     const newState = { ...currState }
-                    return { articles: [...newState.articles, ...articles], total_articles }
+                    return { articles: [...newState.articles, ...articles], total_articles, errMsg: null, errStatus: null }
                 })
+            }).catch(({ response }) => {
+                const { status, data: { msg } } = response;
+                this.setState({ errStatus: status, errMsg: msg })
             })
         }
     }

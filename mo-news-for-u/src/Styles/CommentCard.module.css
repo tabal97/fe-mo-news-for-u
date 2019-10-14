@@ -24,15 +24,6 @@
     text-align: justify
     }
 .delete{
-    left:100px
-}
-.deleted{
-    left:100px;
-    height: 5rem
+    left:3rem
 }
 
-@media (max-width:600px){
-    .delete{
-        height: 3rem
-    }
-}
