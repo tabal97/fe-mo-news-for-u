@@ -80,10 +80,11 @@ class CommentsList extends Component {
         const { article_id } = this.props;
         const currentUser = localStorage.getItem("currentUser")
         const input = { username: currentUser, body };
-        api.postComment(article_id, input).then(comment => {
+        api.postComment(article_id, input).then(({ comment }) => {
             this.setState(currState => {
+                console.log(comment)
                 const newState = { ...currState };
-                return { comments: [...newState.comments, comment] }
+                return { comments: [comment, ...newState.comments] }
             })
         })
     }

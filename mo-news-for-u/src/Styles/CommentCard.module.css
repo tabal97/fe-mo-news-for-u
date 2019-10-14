@@ -24,10 +24,15 @@
     text-align: justify
     }
 .delete{
-    flex-grow: 2;
     left:100px
+}
+.deleted{
+    left:100px;
+    height: 5rem
 }
 
 @media (max-width:600px){
-    
+    .delete{
+        height: 3rem
+    }
 }
