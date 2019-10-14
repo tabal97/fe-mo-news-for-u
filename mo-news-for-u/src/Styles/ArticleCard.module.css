@@ -30,3 +30,11 @@ margin-right:auto
 .userTally {
     grid-area: userTally;
 }
+
+@media (max-width: 600px) {
+.card{
+    display:flex;
+    flex-direction: column;
+    font-size: 80%;
+}
+}

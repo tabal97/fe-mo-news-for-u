@@ -8,9 +8,9 @@ class CommentAdder extends Component {
     render() {
         const { body, currentUser } = this.state;
         return (
-            <form className={styles.form} onSubmit={this.handleSubmit}><label className={styles.box} >Add Comment:
+            <form className={styles.form} onSubmit={this.handleSubmit}><label className={styles.box} >Add Comment: </label>
                 <textarea rows="4" cols="50" value={body} onChange={this.handleChange} placeholder="Write here..."></textarea>
-            </label><button className={styles.button} disabled={!currentUser} >{currentUser ? "Add Comment" : "Login Required"}</button>
+                <button className={styles.button} disabled={!currentUser} >{currentUser ? "Add Comment" : "Login Required"}</button>
             </form>
         );
     }

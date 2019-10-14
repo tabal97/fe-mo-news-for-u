@@ -39,3 +39,16 @@
     font-size: 105%;
     max-width: 7rem;
 }
+
+@media (max-width:600px){
+.card{
+    display:flex;
+    
+}
+.upVote{
+    margin-left: 0rem
+}
+.activeUpVote{
+    margin-left: 0rem
+}
+}

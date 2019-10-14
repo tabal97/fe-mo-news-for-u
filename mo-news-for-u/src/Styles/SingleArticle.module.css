@@ -54,3 +54,19 @@
 .created_at {
     grid-area: created_at;
 }
+
+@media (max-width: 600px) {
+    .container{
+        display:flex;
+        flex-direction: column;
+    }
+    .body{
+        font-size: 95%;
+        margin: 1rem
+    }
+    .topic{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        align-self:center
+    }
+}

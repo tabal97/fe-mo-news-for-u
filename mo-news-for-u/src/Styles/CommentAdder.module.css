@@ -1,13 +1,10 @@
 .form{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-.box{
+/* .box{
     width: 30rem;
     height: 5rem;
-}
+} */
 
-.button {
-
-}

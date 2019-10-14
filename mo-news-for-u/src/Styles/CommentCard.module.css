@@ -26,3 +26,9 @@
 .delete{
     left:100px
 }
+
+@media (max-width:600px){
+    .delete{
+        padding: auto;
+    }
+}
