@@ -24,11 +24,10 @@
     text-align: justify
     }
 .delete{
+    flex-grow: 2;
     left:100px
 }
 
 @media (max-width:600px){
-    .delete{
-        padding: auto;
-    }
+    
 }

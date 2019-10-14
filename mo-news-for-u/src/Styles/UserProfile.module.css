@@ -16,3 +16,13 @@
     grid-area: img;
     border: 3px solid grey
 }
+
+@media (max-width: 600px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .img{
+        object-fit: contain;
+    }
+}
