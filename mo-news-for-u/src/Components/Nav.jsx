@@ -9,6 +9,7 @@ class Nav extends Component {
     render() {
         const { topics, errStatus, errMsg } = this.state;
         return (errStatus) ? <Errors msg={errMsg} status={errStatus} /> : (
+
             <nav><Link to="/">Home</Link> {topics.map(({ slug }) => {
                 return (<React.Fragment key={slug}> || <Link to={`/topics/${slug}`} >{`${slug}`}</Link></React.Fragment>);
             })} || <Link to="/login">Change User</Link>

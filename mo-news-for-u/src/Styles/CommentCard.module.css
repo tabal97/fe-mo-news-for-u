@@ -24,6 +24,12 @@
     text-align: justify
     }
 .delete{
+    display:flex;
+    
     left:3rem
+}
+
+@media (max-width: 600px) {
+
 }
 
