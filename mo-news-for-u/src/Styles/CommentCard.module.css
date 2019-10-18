@@ -25,11 +25,17 @@
     }
 .delete{
     display:flex;
-    flex-direction: column;
-    left:3rem
+    flex-wrap: wrap;
+    left:3rem;
+    overflow: visible;
+    height:auto;
+}
+.delete>span{
+    position: relative;
+
 }
 
-@media (max-width: 600px) {
 
+@media (max-width: 600px) {
 }
 
