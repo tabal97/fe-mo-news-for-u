@@ -7,7 +7,7 @@
 .history/*
 
 # hosting
-.netlify
+netlify
 
 # testing
 /coverage

@@ -4,10 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-.history/*
+*.history
 
 # hosting
-.netlify
+netlify
 
 # testing
 /coverage
